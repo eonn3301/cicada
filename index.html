@@ -1,4 +1,208 @@
-latin-to-rune
-=============
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var numRune = {
+			0: '·',
+			2: 'ᚠ',
+			3: 'ᚢ',
+			5: 'ᚦ',
+			7: 'ᚩ',
+			11: 'ᚱ',
+			13: 'ᚳ',
+			17: 'ᚷ',
+			19: 'ᚹ',
+			23: 'ᚻ',
+			29: 'ᚾ',
+			31: 'ᛁ',
+			37: 'ᛂ',
+			41: 'ᛇ',
+			43: 'ᛈ',
+			47: 'ᛉ',
+			53: 'ᛋ',
+			59: 'ᛏ', 
+			61: 'ᛒ', 
+			67: 'ᛖ', 
+			71: 'ᛗ',
+			73: 'ᛚ',
+			79: 'ᛝ',
+			83: 'ᛟ',
+			89: 'ᛞ',
+			97: 'ᚪ',
+			101: 'ᚫ', 
+			103: 'ᚣ',
+			107: 'ᛡ',
+			109: 'ᛠ'			
+		}
+		var latinNum = {
+			/* credits: soulseekah & @sizzybizzy */
+			' ': 0,
+			'f': 2,
+			'u': 3,
+			'v': 3, // v, not listed but @sizzybizzy recommended
+			'T': 5, // th
+			'o': 7,
+			'r': 11,
+			'c': 13,
+			'k': 13,
+			'g': 17,
+			'w': 19,
+			'h': 23,
+			'n': 29,
+			'i': 31,
+			'j': 37,
+			'E': 41, // eo
+			'p': 43,
+			'x': 47,
+			's': 53,
+			'z': 53,
+			't': 59,
+			'b': 61,
+			'e': 67,
+			'm': 71,
+			'l': 73,
+			'G': 79, // ng, ing
+			'O': 83, // oe
+			'd': 89,
+			'a': 97,
+			'A': 101, // ae
+			'y': 103,
+			'I': 107, // ia, io
+			'X': 109 // ea
+		};
+	</script>
+	<style type="text/css">
+	.runestyle {
+		text-align: center; 
+		padding-left: 10px;
+		font-size: 25px;
+	}
+	.plainstyle {
+		text-align: center; 
+		padding-left: 10px;
+		font-size: 15px;
+	}
+	body {
+		font-family:Arial,Dejavu Sans Condensed;
+	}
+	.runediv {
+		width:50%;
+		float: right;
+		font-size: 30pt;
+		word-break: break-all;
+	}
+	</style>
+</head>
+<body>
+	<div style="width:45%; float: left;">
+		<h1>Plaintext</h1>
+		Input have to be lowercase except the chars below
+		<textarea id="plain" style="width: 100%; height: 300px;"></textarea>
+		<table class="table">
+		<tbody>
+  				<tr><td style="padding-right: 100px;">T => th</td><td style="padding-right: 100px;">A => ae</td><td>O => oe</td></tr>
+  				<tr><td>E => eo</td><td>I => ia/io</td></tr>
+  				<tr><td>X => ea</td><td>G => ng/ing</td></tr>
+  		</tbody>
+		</table>
 
-convert latin chars to runes
+
+	</div>
+
+	<div style="width:50%; float: right;"><h1>Runes</h1></div>
+	<div class="runediv" id="rune">
+
+	</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+	    function myFunc() {
+	        var input = $("#plain").val();
+	        var res = input.split("");
+	        var tmp = $("#rune");
+	        var test = "";
+	        for(a in res) {
+	        	test = test + numRune[latinNum[res[a]]];
+	        	$("#rune").text(test);
+	        }
+	    }
+	    myFunc();
+
+	    // EDIT BELOW -- this will update while typing
+	    $("#plain").keyup(myFunc);
+	});
+</script>
+
+<div style="width:100%; float: left; margin-top: 10px;">
+	
+<table>
+			<tr>
+			<td class="runestyle">&#x16A0;</td>
+				<td class="runestyle">&#x16A2;</td>
+				<td class="runestyle">&#x16A6;</td>
+				<td class="runestyle">&#x16A9;</td>
+				<td class="runestyle">&#x16B1;</td>
+				<td class="runestyle">&#x16B3;</td>
+				<td class="runestyle">&#x16B7;</td>
+				<td class="runestyle">&#x16B9;</td>
+				<td class="runestyle">&#x16BB;</td>
+				<td class="runestyle">&#x16BE;</td>
+				<td class="runestyle">&#x16C1;</td>
+				<td class="runestyle">&#x16C2;</td>
+				<td class="runestyle">&#x16C7;</td>
+				<td class="runestyle">&#x16C8;</td>
+				<td class="runestyle">&#x16C9;</td>
+				<td class="runestyle">&#x16CB;</td>
+				<td class="runestyle">&#x16CF;</td>
+				<td class="runestyle">&#x16D2;</td>
+				<td class="runestyle">&#x16D6;</td>
+				<td class="runestyle">&#x16D7;</td>
+				<td class="runestyle">&#x16DA;</td>
+				<td class="runestyle">&#x16DD;</td>
+				<td class="runestyle">&#x16DF;</td>
+				<td class="runestyle">&#x16DE;</td>
+				<td class="runestyle">&#x16AA;</td>
+				<td class="runestyle">&#x16AB;</td>
+				<td class="runestyle">&#x16A3;</td>
+				<td class="runestyle">&#x16E1;</td>
+				<td class="runestyle">&#x16E0;</td>
+
+			</tr>			
+			<tr>
+				<td class="plainstyle">f</td>
+				<td class="plainstyle">u/v</td>
+				<td class="plainstyle">th</td>
+				<td class="plainstyle">o</td>
+				<td class="plainstyle">r</td>
+				<td class="plainstyle">c/k</td>
+				<td class="plainstyle">g</td>
+				<td class="plainstyle">w</td>
+				<td class="plainstyle">h</td>
+				<td class="plainstyle">n</td>
+				<td class="plainstyle">i</td>
+				<td class="plainstyle">j</td>
+				<td class="plainstyle">eo</td>
+				<td class="plainstyle">p</td>
+				<td class="plainstyle">x</td>
+				<td class="plainstyle">s/z</td>
+				<td class="plainstyle">t</td>
+				<td class="plainstyle">b</td>
+				<td class="plainstyle">e</td>
+				<td class="plainstyle">m</td>
+				<td class="plainstyle">l</td>
+				<td class="plainstyle">ng/ing</td>
+				<td class="plainstyle">oe</td>
+				<td class="plainstyle">d</td>
+				<td class="plainstyle">a</td>
+				<td class="plainstyle">ae</td>
+				<td class="plainstyle">y</td>
+				<td class="plainstyle">ia/io</td>
+				<td class="plainstyle">ea</td>
+				
+			</tr>
+		</table>
+
+</div>
+</body>
+</html>
