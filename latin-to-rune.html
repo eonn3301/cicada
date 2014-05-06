@@ -72,6 +72,21 @@
 			'I': 107, // ia, io
 			'X': 109 // ea
 		};
+		$(document).ready(function(){
+		    function myFunc() {
+		        var input = $("#plain").val();
+		        var res = input.split("");
+		        var test = "";
+		        for(a in res) {
+		        	test = test + numRune[latinNum[res[a]]];
+		        	$("#rune").text(test);
+		        }
+		    }
+		    myFunc();
+
+		    // EDIT BELOW -- this will update while typing
+		    $("#plain").keyup(myFunc);
+		});
 	</script>
 	<style type="text/css">
 	.runestyle {
@@ -111,37 +126,13 @@
   				<tr><td>X => ea</td><td>G => ng/ing</td></tr>
   		</tbody>
 		</table>
-
-
 	</div>
-
 	<div style="width:50%; float: right;"><h1>Runes</h1></div>
-	<div class="runediv" id="rune">
-
-	</div>
-<script type="text/javascript">
-	$(document).ready(function(){
-	    function myFunc() {
-	        var input = $("#plain").val();
-	        var res = input.split("");
-	        var test = "";
-	        for(a in res) {
-	        	test = test + numRune[latinNum[res[a]]];
-	        	$("#rune").text(test);
-	        }
-	    }
-	    myFunc();
-
-	    // EDIT BELOW -- this will update while typing
-	    $("#plain").keyup(myFunc);
-	});
-</script>
-
-<div style="width:100%; float: left; margin-top: 10px;">
-	
-<table>
+	<div class="runediv" id="rune"></div>
+	<div style="width:100%; float: left; margin-top: 10px;">
+		<table>
 			<tr>
-			<td class="runestyle">&#x16A0;</td>
+				<td class="runestyle">&#x16A0;</td>
 				<td class="runestyle">&#x16A2;</td>
 				<td class="runestyle">&#x16A6;</td>
 				<td class="runestyle">&#x16A9;</td>
@@ -170,7 +161,6 @@
 				<td class="runestyle">&#x16A3;</td>
 				<td class="runestyle">&#x16E1;</td>
 				<td class="runestyle">&#x16E0;</td>
-
 			</tr>			
 			<tr>
 				<td class="plainstyle">f</td>
@@ -201,11 +191,9 @@
 				<td class="plainstyle">ae</td>
 				<td class="plainstyle">y</td>
 				<td class="plainstyle">ia/io</td>
-				<td class="plainstyle">ea</td>
-				
-			</tr>
-		</table>
-
-</div>
-</body>
+				<td class="plainstyle">ea</td>		
+				</tr>
+			</table>
+		</div>
+	</body>
 </html>
