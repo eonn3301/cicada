@@ -73,6 +73,31 @@
 			'I': 107, // ia, io
 			'X': 109 // ea
 		};
+		$(document).ready(function(){
+
+			function arraySearch(arr,val) {
+		    	for (var i=0; i<arr.length; i++)
+		        	if (arr[i] === val)                    
+		            	return i;
+		    	return false;
+		  	}
+		    function myFunc() {
+
+		        var input = $("#plain").val();
+		        var splitted = input.split("");
+		        var english = "";
+		        for(var i=0; i<splitted.length; i++) {
+		        	english = english + numRune[splitted[i]];
+		        	$("#rune").text(english);
+		        }
+		    }
+		    myFunc();
+
+
+
+		    // EDIT BELOW -- this will update while typing
+		    $("#plain").keyup(myFunc);
+		});
 	</script>
 	<style type="text/css">
 	.runestyle {
@@ -104,110 +129,74 @@
 	<div style="width:45%; float: left;">
 		<h1>Runes</h1>
 		<textarea id="plain" style="width: 100%; height: 300px;"></textarea>
-
 	</div>
-
 	<div style="width:50%; float: right;"><h1>English letter</h1></div>
-	<div class="runediv" id="rune">
-
-	</div>
-<script type="text/javascript">
-	$(document).ready(function(){
-
-		function arraySearch(arr,val) {
-	    	for (var i=0; i<arr.length; i++)
-	        	if (arr[i] === val)                    
-	            	return i;
-	    	return false;
-	  	}
-	    function myFunc() {
-
-	        var input = $("#plain").val();
-	        var splitted = input.split("");
-	        var english = "";
-	        for(var i=0; i<splitted.length; i++) {
-	        	english = english + numRune[splitted[i]];
-	        	$("#rune").text(english);
-	        }
-	    }
-	    myFunc();
-
-
-
-	    // EDIT BELOW -- this will update while typing
-	    $("#plain").keyup(myFunc);
-	});
-</script>
-
-<div style="width:100%; float: left; margin-top: 10px;">
-	
-<table>
-			<tr>
-			<td class="runestyle">&#x16A0;</td>
-				<td class="runestyle">&#x16A2;</td>
-				<td class="runestyle">&#x16A6;</td>
-				<td class="runestyle">&#x16A9;</td>
-				<td class="runestyle">&#x16B1;</td>
-				<td class="runestyle">&#x16B3;</td>
-				<td class="runestyle">&#x16B7;</td>
-				<td class="runestyle">&#x16B9;</td>
-				<td class="runestyle">&#x16BB;</td>
-				<td class="runestyle">&#x16BE;</td>
-				<td class="runestyle">&#x16C1;</td>
-				<td class="runestyle">&#x16C2;</td>
-				<td class="runestyle">&#x16C7;</td>
-				<td class="runestyle">&#x16C8;</td>
-				<td class="runestyle">&#x16C9;</td>
-				<td class="runestyle">&#x16CB;</td>
-				<td class="runestyle">&#x16CF;</td>
-				<td class="runestyle">&#x16D2;</td>
-				<td class="runestyle">&#x16D6;</td>
-				<td class="runestyle">&#x16D7;</td>
-				<td class="runestyle">&#x16DA;</td>
-				<td class="runestyle">&#x16DD;</td>
-				<td class="runestyle">&#x16DF;</td>
-				<td class="runestyle">&#x16DE;</td>
-				<td class="runestyle">&#x16AA;</td>
-				<td class="runestyle">&#x16AB;</td>
-				<td class="runestyle">&#x16A3;</td>
-				<td class="runestyle">&#x16E1;</td>
-				<td class="runestyle">&#x16E0;</td>
-
-			</tr>			
-			<tr>
-				<td class="plainstyle">f</td>
-				<td class="plainstyle">u/v</td>
-				<td class="plainstyle">th</td>
-				<td class="plainstyle">o</td>
-				<td class="plainstyle">r</td>
-				<td class="plainstyle">c/k</td>
-				<td class="plainstyle">g</td>
-				<td class="plainstyle">w</td>
-				<td class="plainstyle">h</td>
-				<td class="plainstyle">n</td>
-				<td class="plainstyle">i</td>
-				<td class="plainstyle">j</td>
-				<td class="plainstyle">eo</td>
-				<td class="plainstyle">p</td>
-				<td class="plainstyle">x</td>
-				<td class="plainstyle">s/z</td>
-				<td class="plainstyle">t</td>
-				<td class="plainstyle">b</td>
-				<td class="plainstyle">e</td>
-				<td class="plainstyle">m</td>
-				<td class="plainstyle">l</td>
-				<td class="plainstyle">ng/ing</td>
-				<td class="plainstyle">oe</td>
-				<td class="plainstyle">d</td>
-				<td class="plainstyle">a</td>
-				<td class="plainstyle">ae</td>
-				<td class="plainstyle">y</td>
-				<td class="plainstyle">ia/io</td>
-				<td class="plainstyle">ea</td>
-				
-			</tr>
-		</table>
-
-</div>
-</body>
+	<div class="runediv" id="rune"></div>
+	<div style="width:100%; float: left; margin-top: 10px;">
+		<table>
+				<tr>
+					<td class="runestyle">&#x16A0;</td>
+					<td class="runestyle">&#x16A2;</td>
+					<td class="runestyle">&#x16A6;</td>
+					<td class="runestyle">&#x16A9;</td>
+					<td class="runestyle">&#x16B1;</td>
+					<td class="runestyle">&#x16B3;</td>
+					<td class="runestyle">&#x16B7;</td>
+					<td class="runestyle">&#x16B9;</td>
+					<td class="runestyle">&#x16BB;</td>
+					<td class="runestyle">&#x16BE;</td>
+					<td class="runestyle">&#x16C1;</td>
+					<td class="runestyle">&#x16C2;</td>
+					<td class="runestyle">&#x16C7;</td>
+					<td class="runestyle">&#x16C8;</td>
+					<td class="runestyle">&#x16C9;</td>
+					<td class="runestyle">&#x16CB;</td>
+					<td class="runestyle">&#x16CF;</td>
+					<td class="runestyle">&#x16D2;</td>
+					<td class="runestyle">&#x16D6;</td>
+					<td class="runestyle">&#x16D7;</td>
+					<td class="runestyle">&#x16DA;</td>
+					<td class="runestyle">&#x16DD;</td>
+					<td class="runestyle">&#x16DF;</td>
+					<td class="runestyle">&#x16DE;</td>
+					<td class="runestyle">&#x16AA;</td>
+					<td class="runestyle">&#x16AB;</td>
+					<td class="runestyle">&#x16A3;</td>
+					<td class="runestyle">&#x16E1;</td>
+					<td class="runestyle">&#x16E0;</td>
+				</tr>			
+				<tr>
+					<td class="plainstyle">f</td>
+					<td class="plainstyle">u/v</td>
+					<td class="plainstyle">th</td>
+					<td class="plainstyle">o</td>
+					<td class="plainstyle">r</td>
+					<td class="plainstyle">c/k</td>
+					<td class="plainstyle">g</td>
+					<td class="plainstyle">w</td>
+					<td class="plainstyle">h</td>
+					<td class="plainstyle">n</td>
+					<td class="plainstyle">i</td>
+					<td class="plainstyle">j</td>
+					<td class="plainstyle">eo</td>
+					<td class="plainstyle">p</td>
+					<td class="plainstyle">x</td>
+					<td class="plainstyle">s/z</td>
+					<td class="plainstyle">t</td>
+					<td class="plainstyle">b</td>
+					<td class="plainstyle">e</td>
+					<td class="plainstyle">m</td>
+					<td class="plainstyle">l</td>
+					<td class="plainstyle">ng/ing</td>
+					<td class="plainstyle">oe</td>
+					<td class="plainstyle">d</td>
+					<td class="plainstyle">a</td>
+					<td class="plainstyle">ae</td>
+					<td class="plainstyle">y</td>
+					<td class="plainstyle">ia/io</td>
+					<td class="plainstyle">ea</td>
+				</tr>
+			</table>
+		</div>
+	</body>
 </html>
