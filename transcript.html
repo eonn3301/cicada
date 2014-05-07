@@ -1,0 +1,140 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script src="http://code.jquery.com/jquery-1.8.3.min.js" type="text/javascript"></script>
+		<style type="text/css">
+			body {
+				font-family:Arial,Dejavu Sans Condensed;
+			}
+			td:active {
+				background: red;
+			}
+		</style>
+		<script type="text/javascript">
+			var numRune = {
+				'·':' ',
+				'ᚠ':'f',
+				'ᚢ':'(u/v)',
+				'ᚦ':'(th)',
+				'ᚩ':'o',
+				'ᚱ':'r',
+				'ᚳ':'(c/k)',
+				'ᚷ':'g',
+				'ᚹ':'w',
+				'ᚻ':'h',
+				'ᚾ':'n',
+				'ᛁ':'i',
+				'ᛂ':'j',
+				'ᛇ':'(eo)',
+				'ᛈ':'p',
+				'ᛉ':'x',
+				'ᛋ':'(s/z)',
+				'ᛏ':'t', 
+				'ᛒ':'b', 
+				'ᛖ':'e', 
+				'ᛗ':'m',
+				'ᛚ':'l',
+				'ᛝ':'(ng/ing)',
+				'ᛟ':'(oe)',
+				'ᛞ':'d',
+				'ᚪ':'a',
+				'ᚫ':'(ae)', 
+				'ᚣ':'y',
+				'ᛡ':'(ia/io)',
+				'ᛠ': '(ea)'			
+			}
+			$(document).ready(function() {
+				$("td").click(function(e) {
+					$("#transcription").append(numRune[$(this).html()]);
+				});
+				
+				$("span").click(function(e) {
+					var trans = $("#transcription").html().slice(0,-1);
+					$("#transcription").text(trans);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div style="float: left; width: 40%;">
+		<h1>Gematria Primus</h1>
+		<table style="text-align: center; width: 100%;">
+			<tr style="font-size: 50px;">
+				<td >&#x16A0;</td>
+				<td >&#x16A2;</td>
+				<td >&#x16A6;</td>
+				<td >&#x16A9;</td>
+				<td >&#x16B1;</td>
+				<td >&#x16B3;</td>
+				<td >&#x16B7;</td>
+				<td >&#x16B9;</td>
+				<td >&#x16BB;</td>
+				<td >&#x16BE;</td>
+			</tr>			
+			<tr>
+				<td >f</td>
+				<td >u/v</td>
+				<td >th</td>
+				<td >o</td>
+				<td >r</td>
+				<td >c/k</td>
+				<td >g</td>
+				<td >w</td>
+				<td >h</td>
+				<td >n</td>	
+			</tr>
+			<tr style="font-size: 50px;">
+				<td >&#x16C1;</td>
+				<td >&#x16C2;</td>
+				<td >&#x16C7;</td>
+				<td >&#x16C8;</td>
+				<td >&#x16C9;</td>
+				<td >&#x16CB;</td>
+				<td >&#x16CF;</td>
+				<td >&#x16D2;</td>
+				<td >&#x16D6;</td>
+				<td >&#x16D7;</td>
+			</tr>
+			<tr >
+				<td >i</td>
+				<td >j</td>
+				<td >eo</td>
+				<td >p</td>
+				<td >x</td>
+				<td >s/z</td>
+				<td >t</td>
+				<td >b</td>
+				<td >e</td>
+				<td >m</td>
+			</tr>
+			<tr style="font-size: 50px;">
+				<td >&#x16DA;</td>
+				<td >&#x16DD;</td>
+				<td >&#x16DF;</td>
+				<td >&#x16DE;</td>
+				<td >&#x16AA;</td>
+				<td >&#x16AB;</td>
+				<td >&#x16A3;</td>
+				<td >&#x16E1;</td>
+				<td >&#x16E0;</td>
+				<td >·</td>
+			</tr>
+			<tr>
+				<td >l</td>
+				<td >ng/ing</td>
+				<td >oe</td>
+				<td >d</td>
+				<td >a</td>
+				<td >ae</td>
+				<td >y</td>
+				<td >ia/io</td>
+				<td >ea</td>
+				<td >(space)</td>
+			</tr>
+			</table>
+			</div>
+			<div style="float: right; width: 55%"><h1>Transcription</h1></div>
+			<div style="float: right; width: 55%; height: 50%; font-size: 15pt;" id="transcription"></div>
+			<div style="float: right; width: 55%; text-align; right;"><span id="backspace">BACKSPACE</span></div>
+	</body>
+</html>
