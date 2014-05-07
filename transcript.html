@@ -14,38 +14,38 @@
 			var numRune = {
 				'·':' ',
 				'ᚠ':'f',
-				'ᚢ':'(u/v)',
-				'ᚦ':'(th)',
+				'ᚢ':'u/v',
+				'ᚦ':'th',
 				'ᚩ':'o',
 				'ᚱ':'r',
-				'ᚳ':'(c/k)',
+				'ᚳ':'c/k',
 				'ᚷ':'g',
 				'ᚹ':'w',
 				'ᚻ':'h',
 				'ᚾ':'n',
 				'ᛁ':'i',
 				'ᛂ':'j',
-				'ᛇ':'(eo)',
+				'ᛇ':'eo',
 				'ᛈ':'p',
 				'ᛉ':'x',
-				'ᛋ':'(s/z)',
+				'ᛋ':'s/z',
 				'ᛏ':'t', 
 				'ᛒ':'b', 
 				'ᛖ':'e', 
 				'ᛗ':'m',
 				'ᛚ':'l',
-				'ᛝ':'(ng/ing)',
-				'ᛟ':'(oe)',
+				'ᛝ':'ng/ing',
+				'ᛟ':'oe',
 				'ᛞ':'d',
 				'ᚪ':'a',
-				'ᚫ':'(ae)', 
+				'ᚫ':'ae', 
 				'ᚣ':'y',
-				'ᛡ':'(ia/io)',
-				'ᛠ': '(ea)'			
+				'ᛡ':'ia/io',
+				'ᛠ': 'ea'			
 			}
 			$(document).ready(function() {
 				$("td").click(function(e) {
-					$("#transcription").append(numRune[$(this).html()]);
+					$("#transcription").append(numRune[$(this).html()] + "-");
 				});
 				
 				$("span").click(function(e) {
@@ -132,7 +132,7 @@
 				<td >(space)</td>
 			</tr>
 			</table>
-			<div style="padding-top: 20px;">Click on the prefered rune to transcribe</div>
+			<div style="padding-top: 20px;">Click on the prefered rune to transcript</div>
 			</div>
 			<div style="float: right; width: 55%"><h1>Transcription</h1></div>
 			<div style="float: right; width: 55%; height: 50%; font-size: 15pt;" id="transcription"></div>
